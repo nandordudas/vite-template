@@ -5,11 +5,12 @@
   "private": true,
   "packageManager": "pnpm@10.8.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "dev": "vite --config .config/vite.ts",
+    "build": "vite --config .config/vite.ts build",
     "preview": "vite preview",
     "lint:fix": "pnpm lint --fix",
-    "lint": "eslint --cache --config .config/eslint.ts"
+    "lint": "eslint --cache --config .config/eslint.ts",
+    "typecheck": "vue-tsc -p tsconfig.app.json"
   },
   "dependencies": {
     "vue": "^3.5.13"
