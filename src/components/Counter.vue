@@ -9,12 +9,21 @@ const { count, doubleCount } = storeToRefs(counterStore)
 </script>
 
 <template>
-  <div>
+  <UCard
+    class="w-1/2 mx-auto"
+    variant="subtle"
+  >
+    <template #header>
+      <h3>Counter</h3>
+    </template>
+
     <p>Count: {{ count }}</p>
     <p>Double Count: {{ doubleCount }}</p>
 
-    <UButton @click.capture="counterStore.increment">
-      Increment
-    </UButton>
-  </div>
+    <template #footer>
+      <UButton @click="counterStore.increment">
+        Increment
+      </UButton>
+    </template>
+  </UCard>
 </template>
