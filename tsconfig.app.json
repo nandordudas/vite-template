@@ -3,6 +3,10 @@
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 
+    "paths": {
+      "@/*": ["./src/*"] // [INFO] use same in .config/vite.ts `resolve.alias`
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

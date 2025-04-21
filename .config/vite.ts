@@ -13,9 +13,19 @@ export default defineConfig(async ({ mode }) => {
   return {
     plugins: [
       vue(),
-      uiPro(),
+      uiPro({
+        autoImport: {
+          imports: ['pinia', 'vue'],
+          dirs: ['src/stores/**'],
+        },
+      }),
     ],
     server: { https },
+    resolve: {
+      alias: {
+        '@': '/src', // [INFO] use same in tsconfig.app.json `compilerOptions.paths`
+      },
+    },
   }
 })
 

@@ -6,5 +6,7 @@ defineOptions({
 </script>
 
 <template>
-  <UPageHero title="Home Page" />
+  <UPageHero title="Home Page">
+    <Counter />
+  </UPageHero>
 </template>
