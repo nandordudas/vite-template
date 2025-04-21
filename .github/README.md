@@ -1,18 +1,23 @@
-# Vue 3 + TypeScript + Vite
-
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
-
 > [!TIP]
 >
 > > mkcert is a simple tool for making locally-trusted development certificates. It requires no configuration.
 >
 > [mkcert](https://github.com/FiloSottile/mkcert)
 
-## VS Code
+## Setup
 
-General configuration:
+```bash
+# use GitHub template and clone your own repository
+git clone https://github.com/nandordudas/vite-template
+cp .env.example .env
+# (optional) fill out missing values
+pnpm install
+pnpm run dev --open
+```
+
+Recommended to set `VS Code` settings for better DX with
+
+## `VS Code`
 
 ```jsonc
 {
@@ -20,16 +25,20 @@ General configuration:
     "editor.defaultFormatter": "Vue.volar"
   },
   /*  */
-  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "editor.formatOnSave": false,
   "editor.gotoLocation.multipleDefinitions": "goto",
   "editor.inlayHints.enabled": "offUnlessPressed",
-  "editor.tabSize": 2,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   /*  */
-  "files.encoding": "utf8",
-  "files.eol": "\n",
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   /*  */
   "js/ts.implicitProjectConfig.checkJs": false,
   /*  */
@@ -59,7 +68,7 @@ General configuration:
     "watchFile": "useFsEventsOnParentDirectory"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
-  /*  */
+  /* Vue.volar */
   "vue.autoInsert.dotValue": true,
   "vue.codeLens.enabled": false,
   "vue.inlayHints.destructuredProps": true,
@@ -67,32 +76,7 @@ General configuration:
   "vue.inlayHints.missingProps": true,
   "vue.inlayHints.optionsWrapper": true,
   "vue.inlayHints.vBindShorthand": true,
-  /*  */
-  "cSpell.allowCompoundWords": true,
-  "cSpell.language": "en-US",
-  "cSpell.words": [
-    "bumpp",
-    "nums",
-    "nuxt",
-    "unplugin"
-  ],
-  /*  */
-  "errorLens.fontStyleItalic": true,
-  "errorLens.gutterIconsEnabled": true,
-  "errorLens.scrollbarHackEnabled": true
-}
-```
-
-`ESLint` configuration:
-
-```jsonc
-{
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
-  },
-  "editor.formatOnSave": false,
-  /*  */
+  /* dbaeumer.vscode-eslint */
   "eslint.options": {
     "cache": true,
     "overrideConfigFile": ".config/eslint.ts"
@@ -116,22 +100,20 @@ General configuration:
     "tailwindcss",
     "typescript",
     "vue"
-  ]
-}
-```
-
-`Tailwind CSS` configuration:
-
-```jsonc
-{
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
-  /*  */
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  /*  */
+  ],
+  /* streetsidesoftware.code-spell-checker */
+  "cSpell.allowCompoundWords": true,
+  "cSpell.language": "en-US",
+  "cSpell.words": [
+    "bradlc",
+    "bumpp",
+    "dbaeumer",
+    "nums",
+    "nuxt",
+    "unplugin",
+    "usernamehw"
+  ],
+  /* bradlc.vscode-tailwindcss */
   "tailwindCSS.classAttributes": [
     "active-class",
     "class",
@@ -142,12 +124,18 @@ General configuration:
     "leave-active-class",
     "leave-from-class",
     "leave-to-class",
-    "inactive-class",
-    "ui"
+    "inactive-class"
   ],
   "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.experimental.classRegex": [
-    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  /* usernamehw.errorlens */
+  "errorLens.fontStyleItalic": true,
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.scrollbarHackEnabled": true
 }
 ```
+
+# Vue 3 + TypeScript + Vite
+
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+
+Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
