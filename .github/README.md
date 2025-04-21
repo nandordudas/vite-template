@@ -17,7 +17,10 @@ pnpm run dev --open
 
 Recommended to set `VS Code` settings for better DX with
 
-## `VS Code`
+## `VS Code` settings
+
+<details>
+<summary>Click to expand</summary>
 
 ```jsonc
 {
@@ -133,6 +136,10 @@ Recommended to set `VS Code` settings for better DX with
   "errorLens.scrollbarHackEnabled": true
 }
 ```
+
+</details>
+
+---
 
 # Vue 3 + TypeScript + Vite
 
