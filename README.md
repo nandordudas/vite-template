@@ -36,8 +36,41 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
     "html",
     "json",
     "markdown",
+    "tailwindcss",
     "typescript",
     "vue"
+  ]
+}
+```
+
+`Tailwind CSS` configuration:
+
+```json
+{
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  /*  */
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  /*  */
+  "tailwindCSS.classAttributes": [
+    "active-class",
+    "class",
+    "enter-active-class",
+    "enter-active-class",
+    "enter-from-class",
+    "enter-to-class",
+    "leave-active-class",
+    "leave-from-class",
+    "leave-to-class",
+    "inactive-class",
+    "ui"
+  ],
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.experimental.classRegex": [
+    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ]
 }
 ```

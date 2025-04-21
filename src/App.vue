@@ -1,5 +1,9 @@
 <template>
-  <div>
-    Hello World
-  </div>
+  <Suspense>
+    <UApp>
+      <UMain>
+        <RouterView />
+      </UMain>
+    </UApp>
+  </Suspense>
 </template>
