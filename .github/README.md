@@ -5,7 +5,8 @@ This template should help get you started developing with Vue 3 and TypeScript i
 Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
 
 > [!TIP]
-> Intall [mkcert](https://github.com/FiloSottile/mkcert) and create new installation.
+> > mkcert is a simple tool for making locally-trusted development certificates. It requires no configuration.
+> [mkcert](https://github.com/FiloSottile/mkcert)
 
 ## VS Code
 
@@ -68,7 +69,6 @@ General configuration:
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en-US",
   "cSpell.words": [
-    "avenir",
     "bumpp",
     "nums",
     "nuxt",
@@ -120,7 +120,7 @@ General configuration:
 
 `Tailwind CSS` configuration:
 
-```json
+```jsonc
 {
   "editor.quickSuggestions": {
     "strings": "on"
