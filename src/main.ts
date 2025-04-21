@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue' // eslint-disable-line perfectionist/sort-imports
+import App from './App.vue'
 
-createApp(App).mount('#app')
+function main() {
+  const app = createApp(App)
+
+  app.mount('#app')
+}
+
+main()
