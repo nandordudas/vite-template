@@ -15,3 +15,6 @@ export const useCounterStore = defineStore('counter', () => {
     increment,
   }
 })
+
+if (import.meta.hot)
+  import.meta.hot.accept(acceptHMRUpdate(useCounterStore, import.meta.hot))

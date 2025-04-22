@@ -26,6 +26,59 @@ Recommended to set `VS Code` settings for better DX with
 
 ```jsonc
 {
+  "Vue Component Template": {
+    "prefix": "vue-component",
+    "description": "Creates a new component template with TypeScript support",
+    "scope": "vue",
+    "body": [
+      "<script lang=\"ts\">",
+      "/* [INFO] empty */",
+      "</script>",
+      "",
+      "<script setup lang=\"ts\">",
+      "defineOptions({",
+      "  name: '${TM_FILENAME_BASE}',",
+      "  inheritAttrs: false,",
+      "})",
+      "",
+      "/* [INFO] empty */",
+      "</script>",
+      "",
+      "<template>",
+      "  <div>",
+      "    ${TM_FILENAME_BASE}",
+      "  </div>",
+      "</template>",
+      ""
+    ]
+  },
+  /*  */
+  "Pinia Setup Store Boilerplate": {
+    "prefix": "pinia-setup",
+    "description": "Bootstrap the code needed for a Pinia Setup Store file",
+    "scope": "typescript",
+    "body": [
+      "export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/}Store = defineStore('$TM_FILENAME_BASE', () => {",
+      "  return {}",
+      "})",
+      "",
+      "if (import.meta.hot)",
+      " import.meta.hot.accept(acceptHMRUpdate(use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/}Store, import.meta.hot))",
+      ""
+    ]
+  }
+}
+```
+
+</details>
+
+## `VS Code` settings
+
+<details>
+<summary>Click to expand</summary>
+
+```jsonc
+{
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar"
   },
