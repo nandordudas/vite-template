@@ -1,3 +1,5 @@
+[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)
+
 > [!TIP]
 >
 > > mkcert is a simple tool for making locally-trusted development certificates. It requires no configuration.
@@ -43,6 +45,9 @@ Recommended to set `VS Code` settings for better DX with
     "*.css": "tailwindcss"
   },
   /*  */
+  "javascript.inlayHints.parameterNames.enabled": "literals",
+  "javascript.inlayHints.variableTypes.enabled": true,
+  /*  */
   "js/ts.implicitProjectConfig.checkJs": false,
   /*  */
   "typescript.enablePromptUseWorkspaceTsdk": true,
@@ -71,15 +76,14 @@ Recommended to set `VS Code` settings for better DX with
     "watchFile": "useFsEventsOnParentDirectory"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
-  /* Vue.volar */
-  "vue.autoInsert.dotValue": true,
+  /*  */
   "vue.codeLens.enabled": false,
   "vue.inlayHints.destructuredProps": true,
   "vue.inlayHints.inlineHandlerLeading": true,
   "vue.inlayHints.missingProps": true,
   "vue.inlayHints.optionsWrapper": true,
   "vue.inlayHints.vBindShorthand": true,
-  /* dbaeumer.vscode-eslint */
+  /*  */
   "eslint.options": {
     "cache": true,
     "overrideConfigFile": ".config/eslint.ts"
@@ -104,7 +108,7 @@ Recommended to set `VS Code` settings for better DX with
     "typescript",
     "vue"
   ],
-  /* streetsidesoftware.code-spell-checker */
+  /*  */
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en-US",
   "cSpell.words": [
@@ -116,7 +120,7 @@ Recommended to set `VS Code` settings for better DX with
     "unplugin",
     "usernamehw"
   ],
-  /* bradlc.vscode-tailwindcss */
+  /*  */
   "tailwindCSS.classAttributes": [
     "active-class",
     "class",
@@ -130,7 +134,7 @@ Recommended to set `VS Code` settings for better DX with
     "inactive-class"
   ],
   "tailwindCSS.emmetCompletions": true,
-  /* usernamehw.errorlens */
+  /*  */
   "errorLens.fontStyleItalic": true,
   "errorLens.gutterIconsEnabled": true,
   "errorLens.scrollbarHackEnabled": true
