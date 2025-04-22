@@ -19,7 +19,7 @@ pnpm run dev --open
 
 Recommended to set `VS Code` settings for better DX with
 
-## `VS Code` settings
+## `VS Code` snippets
 
 <details>
 <summary>Click to expand</summary>
