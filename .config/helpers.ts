@@ -6,7 +6,7 @@ async function checkAccess(item: string | Buffer | undefined) {
   if (item === undefined)
     throw new Error('Access denied')
 
-  return await access(item.toString(), constants.R_OK)
+  return access(item.toString(), constants.R_OK)
 }
 
 async function validateItems(items: SecureContextOptions['cert'] | SecureContextOptions['key']) {
