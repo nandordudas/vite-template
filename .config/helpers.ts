@@ -9,29 +9,27 @@ async function checkAccess(item: string | Buffer | undefined) {
   return access(item.toString(), constants.R_OK)
 }
 
-async function validateItems(items: SecureContextOptions['cert'] | SecureContextOptions['key']) {
-  if (Array.isArray(items)) {
-    for (const item of items) {
-      if (typeof item === 'object')
-        throw new Error('Invalid cert/key')
+async function validateContextPart(items: SecureContextOptions['cert'] | SecureContextOptions['key']) {
+  if (!Array.isArray(items))
+    return checkAccess(items)
 
+  for await (const item of items) {
+    if (typeof item !== 'object')
       await checkAccess(item)
-    }
-  }
-  else {
-    await checkAccess(items)
   }
 }
 
-export async function getHttpsOptions({ cert, key }: Required<Pick<SecureContextOptions, 'cert' | 'key'>>) {
+export async function getHttpsOptions<
+  const T extends Required<Pick<SecureContextOptions, 'cert' | 'key'>>,
+>({ cert, key }: T): Promise<T | undefined> {
   try {
-    await validateItems(cert)
-    await validateItems(key)
+    await validateContextPart(cert)
+    await validateContextPart(key)
 
     return {
       cert,
       key,
-    } as const
+    } as const as T
   }
   catch {
     console.warn('HTTPS cert/key cannot access')
