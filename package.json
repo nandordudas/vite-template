@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.4.1",
   "private": true,
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@10.10.0",
   "scripts": {
     "dev": "vite --config .config/vite.ts",
     "build": "vite --config .config/vite.ts build",
@@ -15,20 +15,21 @@
     "bumpp": "pnpx bumpp"
   },
   "dependencies": {
-    "@nuxt/ui-pro": "^3.1.0",
-    "pinia": "^3.0.2",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.1"
+    "@nuxt/ui-pro": "catalog:prod",
+    "pinia": "catalog:prod",
+    "pnpm-workspace-yaml": "catalog:prod",
+    "vue": "catalog:prod",
+    "vue-router": "catalog:prod"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.12.0",
-    "@types/node": "^22.15.2",
-    "@vitejs/plugin-vue": "^5.2.3",
-    "@vue/tsconfig": "^0.7.0",
-    "eslint": "^9.25.1",
-    "eslint-plugin-format": "^1.0.1",
-    "typescript": "~5.8.3",
-    "vite": "^6.3.4",
-    "vue-tsc": "^2.2.10"
+    "@antfu/eslint-config": "catalog:lint",
+    "@types/node": "catalog:types",
+    "@vitejs/plugin-vue": "catalog:dev",
+    "@vue/tsconfig": "catalog:lint",
+    "eslint": "catalog:lint",
+    "eslint-plugin-format": "catalog:lint",
+    "typescript": "catalog:dev",
+    "vite": "catalog:dev",
+    "vue-tsc": "catalog:lint"
   }
 }

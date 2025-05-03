@@ -3,6 +3,7 @@ import antfu from '@antfu/eslint-config'
 export default antfu(
   {
     formatters: true,
+    pnpm: true,
     // typescript: { tsconfigPath: 'tsconfig.app.json' }, // [INFO] should be commented out
   },
   { files: ['**/tsconfig*.json'], rules: { 'jsonc/sort-keys': 'off' } },

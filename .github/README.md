@@ -4,6 +4,11 @@
 >
 > > [mkcert](https://github.com/FiloSottile/mkcert) is a simple tool for making locally-trusted development
 > > certificates. It requires no configuration.
+>
+> ```bash
+> # https://github.com/Schniz/fnm
+> npm i -g @antfu/nip @antfu/ni bumpp eslint npkill npm@latest pnpm@latest taze
+> ```
 
 ## Prerequisites
 
@@ -20,6 +25,9 @@ git commit --allow-empty --message 'chore: initial commit'
 ## Setup
 
 ```bash
+npm pkg set name=project-acme
+npm pkg set version=0.1.0
+echo '[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)' >.github/README.md
 cp .env.example .env # (optional) fill out missing values
 pnpm install
 pnpm run dev --open

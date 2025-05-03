@@ -22,6 +22,7 @@ export default defineConfig(async ({ mode }) => {
           imports: ['pinia', 'vue', 'vue-router', '@vueuse/core'],
           dirs: ['src/stores/**'],
         },
+        license: process.env.NUXT_UI_PRO_LICENSE,
       }),
     ],
     server: { https },
