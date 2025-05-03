@@ -22,4 +22,5 @@ jobs:
       - run: pnpm build
         env:
           NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
+          VITE_APP_TITLE: ${{ env.VITE_APP_TITLE }}
       # - run: pnpm typecheck # check #5
