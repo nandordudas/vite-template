@@ -2,26 +2,40 @@
 
 > [!TIP]
 >
-> > [mkcert](https://github.com/FiloSottile/mkcert) is a simple tool for making locally-trusted development certificates. It requires no configuration.
+> > [mkcert](https://github.com/FiloSottile/mkcert) is a simple tool for making locally-trusted development
+> > certificates. It requires no configuration.
+
+## Prerequisites
+
+Use GitHub the current template or clone repository.
+
+```bash
+git clone https://github.com/nandordudas/vite-template project-acme
+cd project-acme
+rm -rf .git
+git init
+git commit --allow-empty --message 'chore: initial commit'
+```
 
 ## Setup
 
 ```bash
-# use GitHub template and clone your own repository
-git clone https://github.com/nandordudas/vite-template
-cp .env.example .env
-# (optional) fill out missing values
+cp .env.example .env # (optional) fill out missing values
 pnpm install
 pnpm run dev --open
 ```
 
 > [!NOTE]
 >
-> If you encounter persistent ESLint errors that are difficult to resolve, try temporarily disabling TypeScript in
-> your ESLint configuration as a first troubleshooting step. This can help isolate whether the issues are
-> TypeScript-specific or related to other ESLint rules.
+> If you encounter ESLint errors that are difficult to resolve, try temporarily disabling TypeScript in your ESLint
+> configuration as a first troubleshooting step.
+>
+> ```diff
+> - typescript: { tsconfigPath: 'tsconfig.app.json' }, // [INFO] should be commented out
+> + // typescript: { tsconfigPath: 'tsconfig.app.json' },
+> ```
 
-Recommended to set `VS Code` settings for better DX with
+Is recommended to set `VS Code` settings for better DX with
 
 ## `VS Code` snippets
 
@@ -44,8 +58,6 @@ Recommended to set `VS Code` settings for better DX with
       "  name: '${TM_FILENAME_BASE}',",
       "  inheritAttrs: false,",
       "})",
-      "",
-      "/* [INFO] empty */",
       "</script>",
       "",
       "<template>",
