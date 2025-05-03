@@ -7,12 +7,13 @@ import App from './App.vue'
 
 function main() {
   const pinia = createPinia()
-  const app = createApp(App)
+  const app = createApp(App as Component)
 
   const router = createRouter({
     history: createWebHistory(),
+    strict: true,
     routes: [
-      { path: '/', component: () => import('./pages/index.vue') },
+      { path: '/', component: async () => import('./pages/index.vue') as Promise<Component> },
     ],
   })
 

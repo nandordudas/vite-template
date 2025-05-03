@@ -15,6 +15,10 @@ pnpm install
 pnpm run dev --open
 ```
 
+> [!NOTE]
+>
+> If you encounter hard to solve ESLint errors, first try to comment out TypeScript in the ESLint config.
+
 Recommended to set `VS Code` settings for better DX with
 
 ## `VS Code` snippets

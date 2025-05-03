@@ -4,23 +4,22 @@ import uiPro from '@nuxt/ui-pro/vite'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig, loadEnv } from 'vite'
 
-import { getHttpsOptions } from './helpers'
+import { createHttpsOptions } from './vite/https'
 
 // https://vite.dev/config/
 export default defineConfig(async ({ mode }) => {
+  let https
   const env = loadEnv(mode, process.cwd())
 
-  const https = await getHttpsOptions({
-    cert: env.VITE_HTTPS_CERT,
-    key: env.VITE_HTTPS_KEY,
-  })
+  if (env.VITE_HTTPS_CERT && env.VITE_HTTPS_KEY)
+    https = await createHttpsOptions({ cert: env.VITE_HTTPS_CERT, key: env.VITE_HTTPS_KEY })
 
   return {
     plugins: [
       vue(),
       uiPro({
         autoImport: {
-          imports: ['pinia', 'vue'],
+          imports: ['pinia', 'vue', 'vue-router', '@vueuse/core'],
           dirs: ['src/stores/**'],
         },
       }),
@@ -36,7 +35,7 @@ export default defineConfig(async ({ mode }) => {
     },
     build: {
       reportCompressedSize: false,
-      sourcemap: process.env.NODE_ENV === 'development',
+      sourcemap: mode === 'development',
       esbuild: {
         pure: ['console.log', 'console.debug', 'console.info'],
         drop: ['debugger'],

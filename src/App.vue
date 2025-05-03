@@ -1,9 +1,14 @@
+<script setup lang="ts">
+defineOptions({
+  name: 'App',
+  inheritAttrs: false,
+})
+</script>
+
 <template>
   <Suspense>
     <UApp>
-      <UMain>
-        <RouterView />
-      </UMain>
+      <RouterView />
     </UApp>
   </Suspense>
 </template>
