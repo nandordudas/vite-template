@@ -17,7 +17,9 @@ pnpm run dev --open
 
 > [!NOTE]
 >
-> If you encounter hard to solve ESLint errors, first try to comment out TypeScript in the ESLint config.
+> If you encounter persistent ESLint errors that are difficult to resolve, try temporarily disabling TypeScript in
+> your ESLint configuration as a first troubleshooting step. This can help isolate whether the issues are
+> TypeScript-specific or related to other ESLint rules.
 
 Recommended to set `VS Code` settings for better DX with
 
